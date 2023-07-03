@@ -34,7 +34,6 @@ function onSearch(e) {
       apiService.total = data.hits.length;
       const markup = onCreateGalleryItem(data);
       refs.galleryMarkup.innerHTML = markup;
-      lightbox.refresh();
 
     if (apiService.total !== data.totalHits) {
       refs.loadMore.style.visibility = 'visible';
@@ -58,7 +57,6 @@ function onLoadMore() {
     }   
     const markup = onCreateGalleryItem(data);
     refs.galleryMarkup.insertAdjacentHTML('beforeend', markup);        
-    lightbox.refresh();
 
   });
 }
